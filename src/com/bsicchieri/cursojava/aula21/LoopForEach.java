@@ -1,7 +1,6 @@
 package com.bsicchieri.cursojava.aula21;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class LoopForEach {
 
