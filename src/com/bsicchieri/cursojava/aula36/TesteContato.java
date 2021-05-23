@@ -1,57 +1,71 @@
 package com.bsicchieri.cursojava.aula36;
 
+import java.time.LocalDate;
+
 public class TesteContato {
 
     public static void main(String[] args) {
 
-        Contato contato = new Contato();
-        contato.setNome("Bruno");
-        //contato.setEndereco("Rua 10");
-        //contato.setTelefone("11 99999-9999");
+        Endereco endereco = new Endereco("Rua teste", 10, "casa", "centro",
+                "curitiba", "pr", "30300-100");
 
-        Endereco end = new Endereco();
-        end.setNomeRua("Rua do Comercio");
-        end.setNumero(10);
-        end.setComplemento("Casa");
-        end.setBairro("Centro");
-        end.setCidade("Curitiba");
-        end.setEstado("Paraná");
-        end.setCEP("300321-000");
+        //LocalDate dataCadastro = LocalDate.of(2020, 2, 1);
+        //LocalDate dataAtual = LocalDate.now();
 
-        contato.setEndereco(end);
-
-        Telefone tel = new Telefone();
-        tel.setTipo("Fixo");
-        tel.setDDD("11");
-        tel.setNumero("99999-9999");
-
-        Telefone tel2 = new Telefone();
-        tel2.setTipo("Celular");
-        tel2.setDDD("11");
-        tel2.setNumero("88888-8888");
-
-        Telefone[] telefones = new Telefone[2];
-        telefones[0] = tel;
-        telefones[1] = tel2;
-
-        contato.setTelefones(telefones);
+        Contato contato = new Contato("Bruno");
+        contato.setEndereco(endereco);
+        contato.setDataCadastro(LocalDate.of(2020, 2, 1));
+        contato.setDataAtual(LocalDate.now());
 
         System.out.println(contato.getNome());
+        System.out.println(contato.getEndereco().getCEP());
+        System.out.println(contato.getDataCadastro());
+        System.out.println(contato.getDataAtual());
+
+        /*
+
+        //System.out.println("Informe o nome da rua: ");
+        //endereco.setNomeRua(validaTexto(scan.nextLine()));
 
         if(contato != null && contato.getEndereco() != null){
             System.out.println(contato.getEndereco().getCidade());
         }
+
+        if(contato != null && contato.getEndereco() != null){
+            System.out.println(contato.getEndereco().getNomeRua());
+        }
+
+        if(contato2 != null && contato2.getEndereco() != null){
+            System.out.println(contato2.getEndereco().getCidade());
+        }
+
+        if(contato2 != null && contato2.getEndereco() != null){
+            System.out.println(contato2.getEndereco().getNomeRua());
+        }
+
+        //Telefone tel = new Telefone("Fixo", "11", "99999-9999");
+        // tel2 = new Telefone("Celular", "11", "88888-8888");
+
+        //Telefone[] telefones = new Telefone[2];
+        //telefones[0] = tel;
+        //telefones[1] = tel2;
+
+        //contato.setTelefones(telefones);
 
         /*
         if(contato != null && contato.getTelefone() != null){
             System.out.println(contato.getTelefone().getDDD() + " " + contato.getTelefone().getNumero());
         } */
 
+        /*
         if(contato != null & contato.getTelefones() != null){
             for(Telefone t : contato.getTelefones()){
-                System.out.println(t.getDDD() + " " + t.getNumero() );
+                System.out.println(t.getTipo() + " " + t.getDDD() + " " + t.getNumero() );
             }
         }
+        */
 
     }
 }
+
+
